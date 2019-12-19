@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+
+  ignite:
+    image: apacheignite/ignite:2.7.6
+    environment:
+      - CONFIG_URI=/opt/ignite/apache-ignite/config/ignite.xml
+    volumes:
+      - ./ignite.xml:/opt/ignite/apache-ignite/config/ignite.xml
+    ports:
+      - "47100:47100"
+      - "47500-47509:47500-47509"
+      - "10800:10800"
